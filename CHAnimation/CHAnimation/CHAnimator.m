@@ -221,9 +221,10 @@ static void updateAnimating(CHAnimator *self)
         }
 
     }
+    for (CHAnimatorItem *item in doneAnimations) {
+        [self removeAnimationForObject:item.object key:item.key];
+    }
     
-    
-    [_list removeObjectsInArray:doneAnimations];
     
 
     updateAnimating(self);
