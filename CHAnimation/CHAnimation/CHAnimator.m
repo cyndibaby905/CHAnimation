@@ -19,13 +19,8 @@
 @implementation CHAnimatorItem
 
 
-
 @end
     
-
-
-
-
 
 @interface CHAnimator ()
 {
@@ -80,13 +75,11 @@ static void updateAnimating(CHAnimator *self)
         
         
         CFDictionaryKeyCallBacks kcb = kCFTypeDictionaryKeyCallBacks;
-        // weak, pointer keys
         kcb.retain = NULL;
         kcb.release = NULL;
         kcb.equal = pointerEqual;
         kcb.hash = pointerHash;
         
-        // strong, object values
         CFDictionaryValueCallBacks vcb = kCFTypeDictionaryValueCallBacks;
         
         _dict = CFDictionaryCreateMutable(NULL, 10, &kcb, &vcb);
@@ -105,19 +98,16 @@ static void updateAnimating(CHAnimator *self)
         return;
     }
     
-    // support arbitrarily many nil keys
     if (!key) {
         key = [[NSUUID UUID] UUIDString];
     }
     
     NSMutableDictionary *animations = (__bridge id)CFDictionaryGetValue(_dict, (__bridge void *)obj);
     
-    // update associated animation state
     if (nil == animations) {
         animations = [NSMutableDictionary dictionary];
         CFDictionarySetValue(_dict, (__bridge void *)obj, (__bridge void *)animations);
     } else {
-        // if the animation instance already exists, avoid cancelling only to restart
         CHAnimation *existingAnim = animations[key];
         if (existingAnim) {
             if (existingAnim == anim) {
@@ -129,7 +119,6 @@ static void updateAnimating(CHAnimator *self)
     }
     animations[key] = anim;
     
-    // create entry after potential removal
     CHAnimatorItem *item = [CHAnimatorItem new];
     item.key = key;
     item.object = obj;
@@ -137,7 +126,6 @@ static void updateAnimating(CHAnimator *self)
     [_list addObject:item];
     
     
-    // start animating if necessary
     updateAnimating(self);
 }
 
@@ -173,10 +161,8 @@ static void updateAnimating(CHAnimator *self)
     if (nil == anim)
         return;
     
-    // remove key
     [animations removeObjectForKey:key];
     
-    // cleanup empty dictionaries
     if (0 == animations.count)
         CFDictionaryRemoveValue(self->_dict, (__bridge void *)obj);
     
@@ -223,8 +209,6 @@ static void updateAnimating(CHAnimator *self)
     [_list removeObjectsInArray:doneAnimations];
     
 
- 
-    
     updateAnimating(self);
     
     [CATransaction commit];

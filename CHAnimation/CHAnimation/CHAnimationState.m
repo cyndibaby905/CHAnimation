@@ -30,15 +30,11 @@
 
 - (BOOL)startIfNeeded:(id)obj atTime:(CFTimeInterval)time
 {
-    // detect start based on time
     if (!_active && time >= _animation.beginTime) {
         _active = YES;
         _startTime = time;
     }
-    else {
-
-    }
-   
+    
     return _active;
 }
 

@@ -25,7 +25,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(20, 20, 100, 100);
         [button setBackgroundColor:[UIColor blueColor]];
-
+        [button setTitle:@"Tap!" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(pointButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         button;
     })];
@@ -35,11 +35,12 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(100, 300, 100, 100);
         [button setBackgroundColor:[UIColor redColor]];
+        [button setTitle:@"Tap!" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(sizeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         button;
     })];
     
-    
+
 }
 
 - (void)pointButtonAction:(UIButton*)sender;
