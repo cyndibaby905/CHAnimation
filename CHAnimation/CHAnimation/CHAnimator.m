@@ -179,10 +179,7 @@ static void updateAnimating(CHAnimator *self)
         return;
     
     [animations removeObjectForKey:key];
-    
-    if (0 == animations.count)
-        CFDictionaryRemoveValue(self->_dict, (__bridge void *)obj);
-    
+        
     
     for (NSInteger index = _list.count - 1; index >= 0; index--) {
         CHAnimatorItem *item = _list[index];
