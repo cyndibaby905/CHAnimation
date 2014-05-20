@@ -22,8 +22,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:({
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
-        button.frame = CGRectMake(150, 100, 100, 50);
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(20, 20, 100, 100);
+        [button setBackgroundColor:[UIColor blueColor]];
+
         [button addTarget:self action:@selector(pointButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         button;
     })];
@@ -31,7 +33,7 @@
     
     [self.view addSubview:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(50, 50, 50, 50);
+        button.frame = CGRectMake(100, 300, 100, 100);
         [button setBackgroundColor:[UIColor redColor]];
         [button addTarget:self action:@selector(sizeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         button;
@@ -49,13 +51,13 @@
         sender.center = [value CGPointValue];
     };
 
-    if (CGPointEqualToPoint(sender.center, CGPointMake(200, 125)) ) {
-        animation1.fromValue = [NSValue valueWithCGPoint:CGPointMake(200, 125)];
-        animation1.toValue = [NSValue valueWithCGPoint:CGPointMake(250, 200)];
+    if (CGPointEqualToPoint(sender.center, CGPointMake(70, 70)) ) {
+        animation1.fromValue = [NSValue valueWithCGPoint:CGPointMake(70, 70)];
+        animation1.toValue = [NSValue valueWithCGPoint:CGPointMake(170, 170)];
     }
     else {
-        animation1.toValue = [NSValue valueWithCGPoint:CGPointMake(200, 125)];
-        animation1.fromValue = [NSValue valueWithCGPoint:CGPointMake(250, 200)];
+        animation1.toValue = [NSValue valueWithCGPoint:CGPointMake(70, 70)];
+        animation1.fromValue = [NSValue valueWithCGPoint:CGPointMake(170, 170)];
     }
     [sender ch_addAnimation:animation1 forKey:@"1"];
 
@@ -73,13 +75,13 @@
         sender.frame = CGRectMake(center.x - size.width/2, center.y - size.height/2, size.width, size.height);
     };
     
-    if (CGSizeEqualToSize(sender.frame.size, CGSizeMake(50, 50)) ) {
-        animation1.fromValue = [NSValue valueWithCGSize:CGSizeMake(50, 50)];
-        animation1.toValue = [NSValue valueWithCGSize:CGSizeMake(150, 150)];
+    if (CGSizeEqualToSize(sender.frame.size, CGSizeMake(100, 100)) ) {
+        animation1.fromValue = [NSValue valueWithCGSize:CGSizeMake(100, 100)];
+        animation1.toValue = [NSValue valueWithCGSize:CGSizeMake(200, 200)];
     }
     else {
-        animation1.fromValue = [NSValue valueWithCGSize:CGSizeMake(150, 150)];
-        animation1.toValue = [NSValue valueWithCGSize:CGSizeMake(50, 50)];
+        animation1.toValue = [NSValue valueWithCGSize:CGSizeMake(100, 100)];
+        animation1.fromValue = [NSValue valueWithCGSize:CGSizeMake(200, 200)];
     }
     [sender ch_addAnimation:animation1 forKey:@"2"];
     
