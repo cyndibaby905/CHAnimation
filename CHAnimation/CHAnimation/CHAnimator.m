@@ -173,7 +173,7 @@ static void updateAnimating(CHAnimator *self)
             [_list removeObject:item];
         }
     }
-
+    updateAnimating(self);
 }
 
 
