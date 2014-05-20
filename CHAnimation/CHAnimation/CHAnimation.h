@@ -29,14 +29,12 @@
 @interface CHAnimation : NSObject
 
 @property (nonatomic, assign)id obj;
-@property (copy, nonatomic) NSString *name;
 @property (assign, nonatomic) CFTimeInterval beginTime;
 @property (assign, nonatomic) CFTimeInterval duration;
 @property (copy, nonatomic) id fromValue;
 @property (copy, nonatomic) id toValue;
 @property (readwrite, nonatomic, copy) id (^readBlock)(id obj);
 @property (readwrite, nonatomic, copy) void (^writeBlock)(id obj, id value);
-@property (readwrite, nonatomic, copy) id (^progressBlock)(id obj, CGFloat progress);
 
 
 @end
