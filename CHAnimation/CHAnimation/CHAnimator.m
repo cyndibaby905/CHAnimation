@@ -61,15 +61,6 @@ static CFHashCode pointerHash(const void *ptr) {
     return (CFHashCode)(ptr);
 }
 
-static void updateAnimating(CHAnimator *self)
-{
-    BOOL paused = (self->_list.count == 0);
-    if (paused != self->_displayLink.paused) {
-        self->_displayLink.paused = paused;
-    }
-
-}
-
 
 + (id)sharedAnimator
 {
@@ -143,7 +134,7 @@ static void updateAnimating(CHAnimator *self)
     [_list addObject:item];
     
     
-    updateAnimating(self);
+    [self updateAnimating];
 }
 
 - (void)removeAllAnimationsForObject:(id)obj
@@ -163,7 +154,7 @@ static void updateAnimating(CHAnimator *self)
             }
         }
     }
-    updateAnimating(self);
+    [self updateAnimating];
    
 }
 
@@ -187,9 +178,16 @@ static void updateAnimating(CHAnimator *self)
             [_list removeObject:item];
         }
     }
-    updateAnimating(self);
+    [self updateAnimating];
 }
 
+- (void)updateAnimating
+{
+    BOOL paused = (_list.count == 0);
+    if (paused != _displayLink.paused) {
+        _displayLink.paused = paused;
+    }
+}
 
 - (void)render
 {
@@ -224,7 +222,7 @@ static void updateAnimating(CHAnimator *self)
     
     
 
-    updateAnimating(self);
+    [self updateAnimating];
     
     [CATransaction commit];
 }
