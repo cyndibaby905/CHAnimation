@@ -43,6 +43,8 @@ A collection of links to external resources may help you to understand the code:
 * [Apple – Core Animation Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html)
 * [AGGeometryKit+POP - Animating Quadrilaterals with Pop](https://github.com/hfossli/aggeometrykit-pop)
 * [Facebook Pop – Extensible iOS and OS X animation library](https://github.com/facebook/pop)
+* [Building Paper – Full Length Event](https://www.youtube.com/watch?v=OiY1cheLpmI)
+
 
 
 
