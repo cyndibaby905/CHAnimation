@@ -47,7 +47,6 @@ A collection of links to external resources may help you to understand the code:
 
 
 ## How it looks ##
-
 ![CHAnimation] (https://raw.github.com/cyndibaby905/CHAnimation/master/CHAnimation.gif)
 
 

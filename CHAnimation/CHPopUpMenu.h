@@ -1,5 +1,5 @@
 //
-//  CHViewController.m
+//  CHPopUpMenu.h
 //  CHAnimation
 //
 //  Created by hangchen on 5/20/14.
@@ -23,41 +23,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "CHViewController.h"
-#import "CHPopUpMenu.h"
+#import <UIKit/UIKit.h>
 
-@interface CHViewController ()
+@interface CHPopUpMenu : UIControl
 
-@end
-
-@implementation CHViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    NSArray *icons = @[[UIImage imageNamed:@"facebook.png"],[UIImage imageNamed:@"twitter.png"],[UIImage imageNamed:@"googleplus.png"],[UIImage imageNamed:@"pinterest.png"],[UIImage imageNamed:@"linkedin.png"],[UIImage imageNamed:@"youtube.png"],[UIImage imageNamed:@"tumblr.png"],[UIImage imageNamed:@"skype.png"]];
-    
-    CHPopUpMenu *popUp = [[CHPopUpMenu alloc]initWithFrame:CGRectMake(145, 300, 30, 30)
-                                                 direction:-M_PI/2
-                                                 iconArray:icons];
-    
-    [self.view addSubview:popUp];
-    
-    
-   
-    
-
-}
-
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+/*
+ Direction: mid direction to where the submenu will point to
+ iconArray: images array for the icons -- Works fine for 80x80px icons
+ 
+ */
+- (id) initWithFrame:(CGRect)frame
+           direction:(CGFloat)directionInRadians
+           iconArray:(NSArray *)icons;
 
 @end

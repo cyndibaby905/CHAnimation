@@ -75,6 +75,12 @@
         CGSize size = CGSizeMake(fromSize.width + (toSize.width - fromSize.width)*progress, fromSize.height + (toSize.height - fromSize.height)*progress);
         _animation.writeBlock(_animation,[NSValue valueWithCGSize:size]);
     }
+    else if ([_animation.fromValue isKindOfClass:NSNumber.class] && [_animation.toValue isKindOfClass:NSNumber.class]) {
+        CGFloat fromValue = [_animation.fromValue floatValue];
+        CGFloat toValue = [_animation.toValue floatValue];
+        CGFloat value = fromValue + (toValue - fromValue)*progress;
+        _animation.writeBlock(_animation,[NSNumber numberWithFloat:value]);
+    }
     
 }
 
