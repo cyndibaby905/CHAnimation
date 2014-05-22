@@ -33,7 +33,7 @@ You can also use this project to help learning [Facebook Pop](https://github.com
 
 Unlike [Facebook Pop](https://github.com/facebook/pop),  `CHAnimation` supports only one animation type, that is linear animation. The main purpose of this project is to help developer understand how an animation engine works, so I tried my best to keep the code small and clean. I think if you finished reading the code of `CHAnimation`, you can add more `timingFunction` as you want.
 
-Currently, `CHAnimation` supports `CGSize` and `CGPoint` as animated values, you can add more types if you want.
+Currently, `CHAnimation` supports `CGSize`, `CGPoint` and `NSNumber` as animated values, you can add more types if you want.
 
 
 ## Resources ##
