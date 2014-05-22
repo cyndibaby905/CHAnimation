@@ -23,6 +23,7 @@
 		77B495C8192B070E00D8099C /* CHAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B495C7192B070E00D8099C /* CHAnimator.m */; };
 		77B495CB192B080200D8099C /* CHAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B495CA192B080200D8099C /* CHAnimation.m */; };
 		77B495CE192B131300D8099C /* CHAnimationState.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B495CD192B131300D8099C /* CHAnimationState.m */; };
+		77B58A5B192E11F3006AA8FE /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B58A5A192E11F3006AA8FE /* background@2x.png */; };
 		77F1186A192D9E9B0038F5AA /* CHPopUpMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F11869192D9E9B0038F5AA /* CHPopUpMenu.m */; };
 		77F1188D192DCE290038F5AA /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F11884192DCE290038F5AA /* facebook@2x.png */; };
 		77F1188E192DCE290038F5AA /* googleplus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F11885192DCE290038F5AA /* googleplus@2x.png */; };
@@ -70,6 +71,7 @@
 		77B495CA192B080200D8099C /* CHAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAnimation.m; sourceTree = "<group>"; };
 		77B495CC192B131300D8099C /* CHAnimationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAnimationState.h; sourceTree = "<group>"; };
 		77B495CD192B131300D8099C /* CHAnimationState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAnimationState.m; sourceTree = "<group>"; };
+		77B58A5A192E11F3006AA8FE /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		77F11868192D9E9B0038F5AA /* CHPopUpMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPopUpMenu.h; sourceTree = "<group>"; };
 		77F11869192D9E9B0038F5AA /* CHPopUpMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPopUpMenu.m; sourceTree = "<group>"; };
 		77F11884192DCE290038F5AA /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		77F11883192DCE290038F5AA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				77B58A5A192E11F3006AA8FE /* background@2x.png */,
 				77F11884192DCE290038F5AA /* facebook@2x.png */,
 				77F11885192DCE290038F5AA /* googleplus@2x.png */,
 				77F11886192DCE290038F5AA /* linkedin@2x.png */,
@@ -299,6 +302,7 @@
 				77F11895192DCE290038F5AA /* youtube@2x.png in Resources */,
 				77F11892192DCE290038F5AA /* skype@2x.png in Resources */,
 				77F1188E192DCE290038F5AA /* googleplus@2x.png in Resources */,
+				77B58A5B192E11F3006AA8FE /* background@2x.png in Resources */,
 				77F11890192DCE290038F5AA /* pinterest@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

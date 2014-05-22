@@ -26,7 +26,7 @@
 #import "CHPopUpMenu.h"
 #import "CHAnimation.h"
 
-
+#define CHPpopUpMenuItemSize 60
 
 @interface CHPopUpMenu () {
     BOOL _isMenuPresented;
@@ -54,10 +54,13 @@
         _direction = directionInRadians;
         self.icons = [[NSArray alloc]initWithArray:icons];
         
-        _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"plus.png"]];
-        _imageView.frame = self.bounds;
-        _imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        [self addSubview:_imageView];
+        
+        [self addSubview:({
+            _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"plus.png"]];
+            _imageView.frame = self.bounds;
+            _imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+            _imageView;
+        })];
         
         [self addTarget:self action:@selector(controlPressed) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -83,14 +86,14 @@
     
     if (!_iconViews) {
         _iconViews = [[NSMutableArray alloc]init];
-        CGFloat size = 60;
-        
         for (UIImage *iconImage in self.icons) {
-            UIImageView *iconView = [[UIImageView alloc]initWithImage:iconImage];
-            iconView.frame = CGRectMake(self.bounds.size.width/2 - size/2, self.bounds.size.height/2 - size/2, size, size);
-            iconView.alpha = 0.0;
-            [self addSubview:iconView];
-            [_iconViews addObject:iconView];
+            [self addSubview:({
+                UIImageView *iconView = [[UIImageView alloc]initWithImage:iconImage];
+                iconView.frame = CGRectMake(self.bounds.size.width/2 - CHPpopUpMenuItemSize/2, self.bounds.size.height/2 - CHPpopUpMenuItemSize/2, CHPpopUpMenuItemSize, CHPpopUpMenuItemSize);
+                iconView.alpha = 0.0;
+                [_iconViews addObject:iconView];
+                iconView;
+            })];
         }
 
     }
@@ -121,6 +124,7 @@
         alpha.beginTime = CACurrentMediaTime() + iconNumber*0.1;
         [icon ch_addAnimation:alpha forKey:@"alpha1"];
         
+        
         CHAnimation *push = [CHAnimation new];
         CGFloat angle = [self angleForIcon:iconNumber numberOfIcons:nIcons];
         CGFloat radius = 90;
@@ -140,7 +144,6 @@
 
 - (void)dismissSubMenu {
     _isMenuPresented = NO;
-    
     int iconNumber = 0;
     int nIcons = [self.icons count];
 
