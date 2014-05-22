@@ -123,11 +123,11 @@
         
         CHAnimation *push = [CHAnimation new];
         CGFloat angle = [self angleForIcon:iconNumber numberOfIcons:nIcons];
-        CGFloat velocity = 90;
+        CGFloat radius = 90;
         push.beginTime = CACurrentMediaTime() + iconNumber*0.1;
         push.duration = 0.3;
         push.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)];
-        push.toValue = [NSValue valueWithCGPoint:CGPointMake(velocity * cosf(angle) + self.bounds.size.width/2, velocity * sinf(angle) + self.bounds.size.height/2)];
+        push.toValue = [NSValue valueWithCGPoint:CGPointMake(radius * cosf(angle) + self.bounds.size.width/2, radius * sinf(angle) + self.bounds.size.height/2)];
         push.writeBlock = ^(id obj, id value) {
             icon.center = [value CGPointValue];
         };
@@ -167,12 +167,12 @@
         
         CHAnimation *push = [CHAnimation new];
         CGFloat angle = [self angleForIcon:iconNumber numberOfIcons:nIcons];
-        CGFloat velocity = 90;
+        CGFloat radius = 90;
         push.beginTime = CACurrentMediaTime() + iconNumber*0.1;
         push.duration = 0.3;
         
         push.toValue = [NSValue valueWithCGPoint:CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)];
-        push.fromValue = [NSValue valueWithCGPoint:CGPointMake(velocity * cosf(angle) + self.bounds.size.width/2, velocity * sinf(angle) + self.bounds.size.height/2)];
+        push.fromValue = [NSValue valueWithCGPoint:CGPointMake(radius * cosf(angle) + self.bounds.size.width/2, radius * sinf(angle) + self.bounds.size.height/2)];
         push.writeBlock = ^(id obj, id value) {
             icon.center = [value CGPointValue];
         };
