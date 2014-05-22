@@ -11,6 +11,15 @@ You can also use this project to help learning [Facebook Pop](https://github.com
 `CHAnimation` requires Xcode 5, targeting either iOS 5.0 and above, ARC-enabled.
 
 
+
+## Types ##
+
+Unlike [Facebook Pop](https://github.com/facebook/pop),  `CHAnimation` supports only one animation type, that is linear animation. The main purpose of this project is to help developer understand how an animation engine works, so I tried my best to keep the code small and clean. I think if you finished reading the code of `CHAnimation`, you can add more `timingFunction` as you want.
+
+Currently, `CHAnimation` supports `CGSize`, `CGPoint` and `NSNumber` as animated values, you can add more types if you want.
+
+
+
 ## How to use ##
 
 
@@ -26,15 +35,10 @@ You can also use this project to help learning [Facebook Pop](https://github.com
     animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(70, 70)];
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(170, 170)];
     
-    [button ch_addAnimation:animation forKey:@"1"];   
+    [button ch_addAnimation:animation forKey:@"1"]; 
 
 
-## Types ##
-
-Unlike [Facebook Pop](https://github.com/facebook/pop),  `CHAnimation` supports only one animation type, that is linear animation. The main purpose of this project is to help developer understand how an animation engine works, so I tried my best to keep the code small and clean. I think if you finished reading the code of `CHAnimation`, you can add more `timingFunction` as you want.
-
-Currently, `CHAnimation` supports `CGSize`, `CGPoint` and `NSNumber` as animated values, you can add more types if you want.
-
+    
 
 ## Resources ##
 
