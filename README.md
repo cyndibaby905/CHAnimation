@@ -1,6 +1,6 @@
 ## CHAnimation ##
 
-`CHAnimation` is a small project used to demonstrate how to write your own animation engine, inspired by [Facebook Pop](https://github.com/facebook/pop).
+`CHAnimation` is a project used to demonstrate how to write your own animation engine, inspired by [Facebook Pop](https://github.com/facebook/pop), with only 600 lines of Objective-C you can understand.
 
 You can also use this project to help learning [Facebook Pop](https://github.com/facebook/pop). 
 
