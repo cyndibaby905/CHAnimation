@@ -35,7 +35,7 @@ Currently, `CHAnimation` supports `CGSize`, `CGPoint` and `NSNumber` as animated
     animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(70, 70)];
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(170, 170)];
     
-    [button ch_addAnimation:animation forKey:@"1"]; 
+    [button ch_addAnimation:animation forKey:@"animation"]; 
 
 
     
