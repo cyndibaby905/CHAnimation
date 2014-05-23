@@ -22,6 +22,8 @@ Currently, `CHAnimation` supports `CGSize`, `CGPoint` and `NSNumber` as animated
 
 ## How to use ##
 
+`CHAnimation` adopts the Core Animation explicit animation programming model, the interfaces are almost the same:
+
 
     #import "CHAnimation.h"
 
